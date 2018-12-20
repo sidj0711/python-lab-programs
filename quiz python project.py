@@ -4,7 +4,7 @@ right=0
 x=16
 t=int()                 
 def check(letter, view,view1):            #answer checking display
-        global right
+        global right                        #global right variable is called in the function
         if letter == correctLetter[index]:
             label = Label(view, text="Right!")
             right += 1
@@ -14,13 +14,13 @@ def check(letter, view,view1):            #answer checking display
         view.after(1000,lambda *arg: unpackView(view,view1))
 
 
-def getView(window):                      #designing the window
+def getView(window):                      #function for designing the window
         view = Frame(window,width=90, height=60)
         view1= Frame(window,width=90, height=60)
         view.pack()
         view1.pack()
         #view3=Frame(window)
-        #view3.pack()
+        #view3.pack(
         lbl=Label(view, text=questions)
         button1=Button(view1, text=answers[0],bg="blue", fg="white",width=30, command=lambda *args: check("A\n", view,view1))
         button2=Button(view1, text=answers[1],bg="blue", fg="white",width=30, command=lambda *args: check("B\n", view,view1))
